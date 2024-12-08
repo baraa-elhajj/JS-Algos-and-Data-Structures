@@ -31,16 +31,20 @@ const isPalindrome = (text) => {
 
 const checkTextInput = () => {
     let textInputValue = document.getElementById("textInput").value;
+
     if (textInputValue === "") {
+        // TODO: UI to be enhanced later
         alert("You should add something first!");
         return;
     }
 
     textInputValue = removeNonAlphaNumericChars(textInputValue);
     if (isPalindrome(textInputValue.toLowerCase())) {
+        // TODO: UI to be enhanced later
         alert(`${textInputValue} is a Palindrome`);
     }
     else {
+        // TODO: UI to be enhanced later
         alert(`${textInputValue} is not a Palindrome`);
     }
 }
