@@ -1,5 +1,5 @@
 // DOM Variables
-const checkButton = document.getElementById("checkBtn");
+const checkButton = document.getElementById("check-btn");
 
 // Palindrome Methods
 const isAlphaNumericChar = (char) => {
@@ -30,7 +30,7 @@ const isPalindrome = (text) => {
 }
 
 const checkTextInput = () => {
-    const textInput = document.getElementById("textInput");
+    const textInput = document.getElementById("text-input");
     let textInputValue = textInput.value.toLowerCase();
     let result = document.getElementById("result");
     result.innerText = "";
