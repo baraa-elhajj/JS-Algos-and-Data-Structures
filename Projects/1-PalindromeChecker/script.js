@@ -1,3 +1,7 @@
+// DOM Variables
+const checkButton = document.getElementById("checkBtn");
+
+// Palindrome Methods
 const isAlphaNumericChar = (char) => {
     const regex = /[a-z0-9]/;
     return regex.test(char);
@@ -25,11 +29,21 @@ const isPalindrome = (text) => {
     return true;
 }
 
-// Testing ...
-let text = "never odd or even";
-console.log(`text: ${text}`);
-text = text.toLowerCase();
-console.log(`toLowerCase(): ${text}`);
-text = removeNonAlphaNumericChars(text);
-console.log(`removeNonAlphaNumericChars(): ${text}`);
-console.log(`isPalindrome(): ${isPalindrome(text)}`);
+const checkTextInput = () => {
+    let textInputValue = document.getElementById("textInput").value;
+    if (textInputValue === "") {
+        alert("You should add something first!");
+        return;
+    }
+
+    textInputValue = removeNonAlphaNumericChars(textInputValue);
+    if (isPalindrome(textInputValue.toLowerCase())) {
+        alert(`${textInputValue} is a Palindrome`);
+    }
+    else {
+        alert(`${textInputValue} is not a Palindrome`);
+    }
+}
+
+// Event Listeners
+checkButton.addEventListener("click", checkTextInput);
