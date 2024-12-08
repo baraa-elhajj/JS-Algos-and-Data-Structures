@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Varela+Round&display=swap');
+
+* {
+    --main-color: #4e54c8;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #1c1c1c, var(--main-color));
+}
+
+.container {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 50px;
+    box-shadow: 0 8px 25px rgba(24, 37, 174, 0.489);
+    width: 400px;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    color: var(--main-color);
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-shadow: 0 8px 25px rgba(52, 59, 142, 0.489);
+}
+
+.input-container {
+    display: flex;
+    width: 100%;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.input-container input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    outline: none;
+    font-size: 0.8rem;
+    background: #f4f4f4;
+    color: var(--main-color);
+    font-weight: 500;
+    border-right: 1px solid #ddd;
+}
+
+.input-container input::placeholder {
+    color: #aaa;
+}
+
+.input-container button {
+    background: var(--main-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background 0.3s;
+}
+
+.input-container button:hover {
+    transform: scale(1.05);
+    background: #3e44b0;
+}
+
+.description {
+    font-size: 0.8rem;
+    color: var(--main-color);
+    line-height: 1.5;
+    font-style: italic;
+    font-weight: 500;
+}
