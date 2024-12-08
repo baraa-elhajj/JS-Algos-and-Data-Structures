@@ -72,6 +72,11 @@ h1 {
     background: #3e44b0;
 }
 
+#result {
+    color: var(--main-color);
+    font-size: 1.9rem;
+}
+
 .description {
     font-size: 0.8rem;
     color: var(--main-color);

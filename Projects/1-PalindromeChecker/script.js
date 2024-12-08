@@ -30,23 +30,24 @@ const isPalindrome = (text) => {
 }
 
 const checkTextInput = () => {
-    let textInputValue = document.getElementById("textInput").value;
+    const textInput = document.getElementById("textInput");
+    let textInputValue = textInput.value.toLowerCase();
+    let result = document.getElementById("result");
+    result.innerText = "";
 
-    if (textInputValue === "") {
-        // TODO: UI to be enhanced later
-        alert("You should add something first!");
+    if (textInput.value === "") {
+        textInput.reportValidity();
         return;
     }
 
     textInputValue = removeNonAlphaNumericChars(textInputValue);
-    if (isPalindrome(textInputValue.toLowerCase())) {
-        // TODO: UI to be enhanced later
-        alert(`${textInputValue} is a Palindrome`);
+    if (isPalindrome(textInputValue)) {
+        result.innerText = `${textInput.value} is a Palindrome!`;
     }
     else {
-        // TODO: UI to be enhanced later
-        alert(`${textInputValue} is not a Palindrome`);
+        result.innerText = `${textInput.value} is NOT a Palindrome!`;
     }
+    textInput.value = "";
 }
 
 // Event Listeners
