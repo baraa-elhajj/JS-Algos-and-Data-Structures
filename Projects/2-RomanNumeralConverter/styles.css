@@ -38,10 +38,10 @@ body {
     margin-bottom: 1.5rem;
     border: none;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 1.5rem;
     outline: none;
     background: #3c3c4d;
-    color: #fff;
+    color: #ffcf99;
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
@@ -56,7 +56,7 @@ body {
     border: none;
     border-radius: 8px;
     background: linear-gradient(90deg, #ff6f61, #ff935c);
-    color: #fff;
+    color: #333;
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     font-weight: 600;
@@ -76,12 +76,14 @@ body {
 }
 
 .converter-container .result {
-    margin-top: 1.5rem;
-    font-size: 1.2rem;
+    font-size: 2rem;
     color: #ffcf99;
     background: #3c3c4d;
-    padding: 1rem;
+    padding: 0.5rem;
+    width: 80%;
+    margin: 1.5rem auto;
     border-radius: 8px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
     display: none;
+    text-align: center;
 }
