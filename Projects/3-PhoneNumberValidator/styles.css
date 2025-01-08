@@ -1,0 +1,104 @@
+:root {
+    --primary-color: #1c7ed6;
+    --secondary-color: #4c6ef5;
+    --background-color: #fff;
+    --text-color: #333;
+    --valid-color: #37b24d;
+    --invalid-color: #e03131;
+    --border-color: #ccc;
+    --border-radius: 8px;
+    --input-padding: 12px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: var(--background-color);
+    color: var(--text-color);
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 24px;
+    width: 300px;
+    text-align: center;
+}
+
+.container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    color: var(--primary-color);
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: var(--input-padding);
+    margin-bottom: 16px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+}
+
+button {
+    flex: 1;
+    padding: var(--input-padding);
+    font-size: 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.check-btn {
+    background: var(--primary-color);
+    color: var(--background-color);
+}
+
+.check-btn:hover {
+    background: #1864ab;
+}
+
+.clear-btn {
+    background: #dee2e6;
+    color: #495057;
+}
+
+.clear-btn:hover {
+    background: #ced4da;
+}
+
+.message {
+    margin-top: 16px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.valid {
+    color: var(--valid-color);
+}
+
+.invalid {
+    color: var(--invalid-color);
+}
