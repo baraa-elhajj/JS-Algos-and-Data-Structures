@@ -2,6 +2,12 @@ function validatePhoneNumber() {
     const phoneInput = document.getElementById('phone').value;
     const message = document.getElementById('message');
 
+    if (phoneInput === '') {
+        message.textContent = 'Please enter a phone number!';
+        message.className = 'message invalid';
+        return;
+    }
+
     // Regular expression for validating US phone numbers
     const regex = /^(\+1[- ]?)?(\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$/;
 
