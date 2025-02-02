@@ -1,58 +1,111 @@
+/* Reset and General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
 body {
+    height: 100%;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+}
+
+/* Wrapper that holds the container and centers it */
+.wrapper {
     display: flex;
     justify-content: center;
+    /* Centers horizontally */
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    /* Centers vertically */
+    height: 100%;
+    background-color: #f4f4f4;
 }
 
-.container {
-    background: white;
-    padding: 20px;
+/* Main container for the content */
+.cash-register-container {
+    background: #ffffff;
+    padding: 40px;
     border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 350px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 380px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
+/* Price screen styling */
 .screen {
-    background: #222;
+    background-color: #333;
     color: #0f0;
-    font-size: 24px;
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    padding: 20px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
+/* Input field styling */
 input {
     width: 100%;
-    padding: 10px 0 10px;
-    font-size: 18px;
+    padding: 14px;
+    font-size: 1.2rem;
     border: 2px solid #ddd;
-    border-radius: 6px;
+    border-radius: 8px;
     text-align: center;
+    margin-top: 15px;
+    background-color: #f9f9f9;
 }
 
-button {
-    background: #28a745;
+/* Button styling */
+.button {
+    padding: 15px;
+    font-size: 1.2rem;
+    background: linear-gradient(135deg, #6e7bff, #8c9eff);
     color: white;
-    padding: 12px;
-    font-size: 18px;
     border: none;
-    border-radius: 6px;
+    border-radius: 25px;
     cursor: pointer;
+    transition: all 0.3s ease;
     width: 100%;
-    margin-top: 10px;
-}
-
-button:hover {
-    background: #218838;
-}
-
-.output {
     margin-top: 20px;
-    font-size: 16px;
-    text-align: left;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #8c9eff, #6e7bff);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+/* Output text */
+.output {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 480px) {
+    .cash-register-container {
+        padding: 20px;
+    }
+
+    .screen {
+        font-size: 1.3rem;
+        padding: 15px;
+    }
+
+    input {
+        font-size: 1.1rem;
+        padding: 12px;
+    }
+
+    .button {
+        font-size: 1.1rem;
+    }
 }
