@@ -19,12 +19,12 @@ const cashDrawerDisplay = document.getElementById('cash-drawer-display');
 
 purchaseBtn.addEventListener('click', function () {
     var button = this;
-    button.classList.add('loading'); // Add the loading class to show the spinner
+    button.classList.add('loading');
 
     // Simulate a delay (e.g., for processing the purchase)
     setTimeout(function () {
-        button.classList.remove('loading'); // Remove the loading class after processing
-    }, 1000); // Adjust the delay time as needed
+        button.classList.remove('loading');
+    }, 1000);
 });
 
 const formatResults = (status, change) => {
@@ -130,7 +130,7 @@ const updateUI = change => {
     ${cid
             .map(
                 ([denominationName, amount]) =>
-                    `<p>${currencyNameMap[denominationName]}: $${amount}</p>`
+                    `<p>${currencyNameMap[denominationName]}: ${amount}</p>`
             )
             .join('')}
   `;
