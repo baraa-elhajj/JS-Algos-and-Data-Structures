@@ -3,17 +3,17 @@ const searchBtn = document.getElementById("search-button");
 const searchInput = document.getElementById("search-input");
 
 const pokemonId = document.getElementById("pokemon-id");
-const pokemonName = document.getElementById("name");
-const pokemonImage = document.getElementById("pokemon-image");
+const pokemonName = document.getElementById("pokemon-name");
+const pokemonImage = document.getElementById("sprite");
 const weight = document.getElementById("weight");
 const height = document.getElementById("height");
-const types = document.getElementById("types");
 const hp = document.getElementById("hp");
 const attack = document.getElementById("attack");
 const defense = document.getElementById("defense");
 const speed = document.getElementById("speed");
 const specialAttack = document.getElementById("special-attack");
 const specialDefense = document.getElementById("special-defense");
+const types = document.getElementById("types");
 
 let pokemonList = null;
 
@@ -49,12 +49,12 @@ const findPokemonById = (id) => {
 }
 
 const findPokemonByName = (name) => {
-    return pokemonList.find((item) => item.name == name);
+    return pokemonList.find((item) => item.name == name.toLowerCase());
 }
 
 const updatePokemonStats = (pokemonInfo) => {
-    pokemonId.textContent = pokemonInfo.id;
-    pokemonName.textContent = pokemonInfo.name;
+    pokemonId.textContent = "#" + pokemonInfo.id;
+    pokemonName.textContent = pokemonInfo.name.toUpperCase();
     pokemonImage.src = pokemonInfo.sprites.front_default;
     pokemonImage.style.display = "block";
     weight.textContent = pokemonInfo.weight;
@@ -65,7 +65,18 @@ const updatePokemonStats = (pokemonInfo) => {
     speed.textContent = pokemonInfo.stats?.find(item => item.stat.name === "speed").base_stat;
     specialAttack.textContent = pokemonInfo.stats?.find(item => item.stat.name === "special-attack").base_stat;
     specialDefense.textContent = pokemonInfo.stats?.find(item => item.stat.name === "special-defense").base_stat;
-    types.textContent = pokemonInfo.types?.map(item => item.type.name).join(", ");
+    displayTypes(pokemonInfo.types?.map(item => item.type.name));
+}
+
+const displayTypes = (typesArray) => {
+    types.innerHTML = ""; // Clear previous types
+
+    typesArray.forEach(type => {
+        const typeElement = document.createElement("span");
+        typeElement.classList.add("type-badge", type.toLowerCase());
+        typeElement.textContent = type.toUpperCase();
+        types.appendChild(typeElement);
+    });
 }
 
 const findPokemonAsync = async () => {
