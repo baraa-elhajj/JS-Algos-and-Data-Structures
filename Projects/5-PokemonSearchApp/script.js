@@ -4,6 +4,7 @@ const searchInput = document.getElementById("search-input");
 
 const pokemonId = document.getElementById("pokemon-id");
 const pokemonName = document.getElementById("name");
+const pokemonImage = document.getElementById("pokemon-image");
 const weight = document.getElementById("weight");
 const height = document.getElementById("height");
 const types = document.getElementById("types");
@@ -54,15 +55,17 @@ const findPokemonByName = (name) => {
 const updatePokemonStats = (pokemonInfo) => {
     pokemonId.textContent = pokemonInfo.id;
     pokemonName.textContent = pokemonInfo.name;
+    pokemonImage.src = pokemonInfo.sprites.front_default;
+    pokemonImage.style.display = "block";
     weight.textContent = pokemonInfo.weight;
     height.textContent = pokemonInfo.height;
-    hp.textContent = pokemonInfo.stats.find(item => item.stat.name === "hp").base_stat;
-    attack.textContent = pokemonInfo.stats.find(item => item.stat.name === "attack").base_stat;
-    defense.textContent = pokemonInfo.stats.find(item => item.stat.name === "defense").base_stat;
-    speed.textContent = pokemonInfo.stats.find(item => item.stat.name === "speed").base_stat;
-    specialAttack.textContent = pokemonInfo.stats.find(item => item.stat.name === "special-attack").base_stat;
-    specialDefense.textContent = pokemonInfo.stats.find(item => item.stat.name === "special-defense").base_stat;
-    types.textContent = pokemonInfo.types.map(item => item.type.name).join(", ");
+    hp.textContent = pokemonInfo.stats?.find(item => item.stat.name === "hp").base_stat;
+    attack.textContent = pokemonInfo.stats?.find(item => item.stat.name === "attack").base_stat;
+    defense.textContent = pokemonInfo.stats?.find(item => item.stat.name === "defense").base_stat;
+    speed.textContent = pokemonInfo.stats?.find(item => item.stat.name === "speed").base_stat;
+    specialAttack.textContent = pokemonInfo.stats?.find(item => item.stat.name === "special-attack").base_stat;
+    specialDefense.textContent = pokemonInfo.stats?.find(item => item.stat.name === "special-defense").base_stat;
+    types.textContent = pokemonInfo.types?.map(item => item.type.name).join(", ");
 }
 
 const findPokemonAsync = async () => {
