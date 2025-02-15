@@ -1,6 +1,24 @@
+/* Variables */
+:root {
+    --primary-color: #ff4500;
+    --primary-dark: #d43f00;
+    --secondary-color: #ffcc00;
+    --gradient-bg: linear-gradient(to right, #ffcc00, #ff6600);
+    --white-bg: rgba(255, 255, 255, 0.9);
+    --white-bg-light: rgba(255, 255, 255, 0.95);
+    --white-bg-transparent: rgba(255, 255, 255, 0.8);
+    --text-color: #333;
+    --text-light: #555;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.2);
+    --border-radius: 10px;
+    --box-shadow: 0 4px 8px var(--shadow-medium);
+}
+
+/* Styles */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #ffcc00, #ff6600);
+    background: var(--gradient-bg);
     background-attachment: fixed;
     text-align: center;
     margin: 0;
@@ -10,15 +28,15 @@ body {
 .container {
     max-width: 500px;
     margin: 50px auto;
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--white-bg);
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }
 
 h1 {
-    color: #ff4500;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px var(--shadow-medium);
 }
 
 .search-box {
@@ -29,24 +47,24 @@ input {
     width: 70%;
     padding: 12px;
     font-size: 16px;
-    border: 2px solid #ff4500;
+    border: 2px solid var(--primary-color);
     border-radius: 25px;
     outline: none;
     transition: all 0.3s ease-in-out;
     text-align: center;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 5px var(--shadow-light);
 }
 
 input:focus {
-    border-color: #d43f00;
+    border-color: var(--primary-dark);
     box-shadow: 0 0 10px rgba(255, 69, 0, 0.7);
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: var(--white-bg-light);
 }
 
 button {
     padding: 10px 15px;
     font-size: 16px;
-    background-color: #ff4500;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 5px;
@@ -55,35 +73,34 @@ button {
 }
 
 button:hover {
-    background-color: #d43f00;
+    background-color: var(--primary-dark);
 }
 
 .pokemon-info {
     text-align: center;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    background: var(--white-bg-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }
 
 .pokemon-info h2 {
     font-size: 26px;
-    color: #ff4500;
+    color: var(--primary-color);
     margin-bottom: 12px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 5px var(--shadow-medium);
 }
 
 .stats-title {
     font-size: 22px;
     font-weight: bold;
     color: #fff;
-    background: linear-gradient(to right, #ff4500, #ff6600);
+    background: var(--gradient-bg);
     display: inline-block;
     padding: 12px 12px;
     border-radius: 20px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--box-shadow);
 }
-
 
 .stats-container {
     display: grid;
@@ -94,13 +111,13 @@ button:hover {
 }
 
 .stat-item {
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--white-bg);
     padding: 12px;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     font-size: 18px;
     font-weight: bold;
-    color: #333;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+    color: var(--text-color);
+    box-shadow: 2px 2px 6px var(--shadow-light);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -112,11 +129,11 @@ button:hover {
 }
 
 .stat-item>span {
-    color: #ffcc00;
+    color: var(--secondary-color);
 }
 
 .stat-label {
-    color: #ff4500;
+    color: var(--primary-color);
     font-weight: bold;
 }
 
@@ -131,31 +148,31 @@ button:hover {
     height: 100px;
     border-radius: 50%;
     object-fit: contain;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--box-shadow);
 }
 
 .pokemon-info p {
     font-size: 18px;
-    color: #333;
-    background: rgba(255, 255, 255, 0.8);
+    color: var(--text-color);
+    background: var(--white-bg-transparent);
     padding: 10px;
     border-radius: 8px;
     margin: 8px auto;
     width: 80%;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 6px var(--shadow-light);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .pokemon-info strong {
-    color: #ff4500;
+    color: var(--primary-color);
     font-weight: bold;
 }
 
 p {
     font-size: 16px;
-    color: #555;
+    color: var(--text-light);
 }
 
 strong {
