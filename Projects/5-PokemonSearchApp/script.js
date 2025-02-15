@@ -4,7 +4,7 @@ const searchInput = document.getElementById("search-input");
 
 let pokemonList = null;
 
-const fetchPokemonList = async () => {
+const fetchPokemonListAsync = async () => {
     try {
         const res = await fetch(pokemonApiUrl);
         const data = await res.json();
@@ -18,7 +18,7 @@ const fetchPokemonList = async () => {
     }
 }
 
-const fetchPokemonInfo = async (pokemon) => {
+const fetchPokemonInfoAsync = async (pokemon) => {
     try {
         const res = await fetch(pokemon.url);
         const data = await res.json();
@@ -39,7 +39,7 @@ const findPokemonByName = (name) => {
     return pokemonList.find((item) => item.name == name);
 }
 
-const findPokemon = async () => {
+const findPokemonAsync = async () => {
     if (searchInput.value == "") {
         alert("Please enter a Pokémon ID or Name...");
         return;
@@ -47,7 +47,7 @@ const findPokemon = async () => {
 
     let pokemon = null;
     if (pokemonList == null) {
-        pokemonList = await fetchPokemonList();
+        pokemonList = await fetchPokemonListAsync();
     }
 
     if (isNaN(searchInput.value)) {
@@ -67,7 +67,7 @@ const findPokemon = async () => {
     console.log("Pokémon found: ", pokemon);
 
     // Update stats >>
-    const pokemonInfo = await fetchPokemonInfo(pokemon);
+    const pokemonInfo = await fetchPokemonInfoAsync(pokemon);
 }
 
-searchBtn.addEventListener('click', findPokemon);
+searchBtn.addEventListener('click', findPokemonAsync);
