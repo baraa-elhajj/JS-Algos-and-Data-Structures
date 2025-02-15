@@ -112,6 +112,10 @@ button:hover {
     transform: scale(1.05);
 }
 
+.stat-item>span {
+    color: #ffcc00;
+}
+
 .stat-label {
     color: #ff4500;
     font-weight: bold;
