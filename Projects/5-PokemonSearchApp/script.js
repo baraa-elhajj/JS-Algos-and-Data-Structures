@@ -9,12 +9,25 @@ const fetchPokemonList = async () => {
         const res = await fetch(pokemonApiUrl);
         const data = await res.json();
         const { count, results } = data;
-        console.log("Fetched " + count + " items >>\nPokemon List: ", results);
+        console.log("Fetched " + count + " items >>\nPokémon List: ", results);
 
         return results;
     } catch (err) {
         console.log(err);
-        alert("Error while fetching pokemon list. Try again..");
+        alert("Error while fetching Pokémon list. Please try again..");
+    }
+}
+
+const fetchPokemonInfo = async (pokemon) => {
+    try {
+        const res = await fetch(pokemon.url);
+        const data = await res.json();
+        console.log("Fetched Pokémon info: ", data);
+
+        return data;
+    } catch (err) {
+        console.log(err);
+        alert("Error while fetching Pokémon info for (" + pokemon.name + "). Please try again..");
     }
 }
 
@@ -28,7 +41,7 @@ const findPokemonByName = (name) => {
 
 const findPokemon = async () => {
     if (searchInput.value == "") {
-        alert("Please enter an ID or a Name...");
+        alert("Please enter a Pokémon ID or Name...");
         return;
     }
 
@@ -51,9 +64,10 @@ const findPokemon = async () => {
         return;
     }
 
-    console.log("Pokemon found: ", pokemon);
+    console.log("Pokémon found: ", pokemon);
 
     // Update stats >>
+    const pokemonInfo = await fetchPokemonInfo(pokemon);
 }
 
 searchBtn.addEventListener('click', findPokemon);
