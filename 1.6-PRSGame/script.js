@@ -42,14 +42,14 @@ function showResults(userOption) {
     playerScoreSpanElement.innerText = playerScore;
 
     if (playerScore === 3 || computerScore === 3) {
-        winnerMsgElement.innerText = `${playerScore === 3 ? "Player" : "Computer"
-            } has won the game!`;
+        winnerMsgElement.innerText =
+            `${playerScore === 3 ? "Player" : "Computer"} has won the game!`; // string interpolation using template literal
 
         resetGameBtn.style.display = "block";
         optionsContainer.style.display = "none";
     }
-
 };
+
 function resetGame() {
     playerScore = 0;
     computerScore = 0;

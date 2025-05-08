@@ -18,7 +18,7 @@ const allSongs = [
 
 const audio = new Audio();
 let userData = {
-    songs: [...allSongs],
+    songs: [...allSongs], // spread operator: used to perform a shallow copy (not by reference)
     currentSong: null,
     songCurrentTime: 0,
 };
