@@ -10,11 +10,16 @@ const titleInput = document.getElementById("title-input");
 const dateInput = document.getElementById("date-input");
 const descriptionInput = document.getElementById("description-input");
 
-const taskData = JSON.parse(localStorage.getItem("data")) || [];
+// JSON.parse(): JSON -> object
+// JSON.stringify(): object -> JSON
+
+// LocalStorage allows storing key-value pairs in the browser persistently (even after closing the tab).
+const taskData = JSON.parse(localStorage.getItem("data")) || []; // if result is empty, add an empty array.
 let currentTask = {};
 
 const removeSpecialChars = (val) => {
-    return val.trim().replace(/[^A-Za-z0-9\-\s]/g, '')
+    // removes anything other than alphanumeric, spaces and - chars.
+    return val.trim().replace(/[^A-Za-z0-9\-\s]/g, '');
 }
 
 const addOrUpdateTask = () => {
@@ -61,12 +66,16 @@ const updateTaskContainer = () => {
 
 
 const deleteTask = (buttonEl) => {
+    // findIndex() returns the index of the first element in an array that satisfies the provided condition.
     const dataArrIndex = taskData.findIndex(
         (item) => item.id === buttonEl.parentElement.id
     );
 
     buttonEl.parentElement.remove();
-    taskData.splice(dataArrIndex, 1);
+
+    // splice(start, deleteCount, itemToAdd): used to add, remove, replace elements in an array.
+    // check https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+    taskData.splice(dataArrIndex, 1); // removes the element using the index.
     localStorage.setItem("data", JSON.stringify(taskData));
 }
 

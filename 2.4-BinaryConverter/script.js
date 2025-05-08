@@ -79,6 +79,7 @@ const checkUserInput = () => {
 
 convertBtn.addEventListener("click", checkUserInput);
 
+// keydown event is fired when a key is pressed on the keyboard.
 numberInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
         checkUserInput();
