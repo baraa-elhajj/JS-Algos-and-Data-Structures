@@ -1,11 +1,11 @@
 const currentDateParagraph = document.getElementById("current-date");
 const dateOptionsSelectElement = document.getElementById("date-options");
 
-const date = new Date();
-const day = date.getDate();
-const month = date.getMonth() + 1;
+const date = new Date(); // gets the current date object
+const day = date.getDate(); // gets the day of the month
+const month = date.getMonth() + 1; // gets the number of the month (starts from 0)
 const year = date.getFullYear();
-const hours = date.getHours();
+const hours = date.getHours(); // gets the hour in the 24 hr format
 const minutes = date.getMinutes();
 
 const formattedDate = `${day}-${month}-${year}`;
