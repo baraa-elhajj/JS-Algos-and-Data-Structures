@@ -171,7 +171,10 @@ const myFavoriteFootballTeam = {
     ],
 };
 
+// prevents any property modification (attributes and values), as well as adding new properties.
 Object.freeze(myFavoriteFootballTeam);
+
+// object destruction: extracts object properties into variables.
 const { sport, team, year, players } = myFavoriteFootballTeam;
 const { coachName } = myFavoriteFootballTeam.headCoach;
 
