@@ -55,6 +55,7 @@ const showAnimation = () => {
         }, obj.removeElDelay);
     });
 
+    // waits n milliseconds to perform the function inside it. Anything outside continues normally.
     setTimeout(() => {
         result.textContent = decimalToBinary(5);
     }, 20000);
