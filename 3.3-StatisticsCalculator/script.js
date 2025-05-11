@@ -1,5 +1,8 @@
+// reduce(): accumulates the values of the array (el var) into the acc var initialized in the 2nd arg.
+// Mean: The sum of all values divided by the number of values.
 const getMean = (array) => array.reduce((acc, el) => acc + el, 0) / array.length;
 
+// Median: The middle value when the numbers are sorted. If even count, average of two middle values.
 const getMedian = (array) => {
     const sorted = array.toSorted((a, b) => a - b);
     const median =
@@ -9,6 +12,7 @@ const getMedian = (array) => {
     return median;
 }
 
+// Mode: The number(s) that appear most frequently.
 const getMode = (array) => {
     const counts = {};
     array.forEach((el) => {
@@ -26,10 +30,12 @@ const getMode = (array) => {
     return mode.join(", ");
 }
 
+// Range: The difference between the largest and smallest values.
 const getRange = (array) => {
     return Math.max(...array) - Math.min(...array);
 }
 
+// Variance: The average of the squared differences from the mean.
 const getVariance = (array) => {
     const mean = getMean(array);
     const variance = array.reduce((acc, el) => {
@@ -40,6 +46,7 @@ const getVariance = (array) => {
     return variance;
 }
 
+// Standard Deviation: The square root of the variance.
 const getStandardDeviation = (array) => {
     return Math.sqrt(getVariance(array));
 }
