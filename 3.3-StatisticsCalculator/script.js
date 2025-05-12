@@ -1,9 +1,9 @@
 // reduce(): accumulates the values of the array (el var) into the acc var initialized in the 2nd arg.
 // Mean: The sum of all values divided by the number of values.
-const getMean = (array) => array.reduce((acc, el) => acc + el, 0) / array.length;
+var getMean = (array) => array.reduce((acc, el) => acc + el, 0) / array.length;
 
 // Median: The middle value when the numbers are sorted. If even count, average of two middle values.
-const getMedian = (array) => {
+var getMedian = (array) => {
     const sorted = array.toSorted((a, b) => a - b);
     const median =
         sorted.length % 2 === 0
@@ -13,7 +13,7 @@ const getMedian = (array) => {
 }
 
 // Mode: The number(s) that appear most frequently.
-const getMode = (array) => {
+var getMode = (array) => {
     const counts = {};
     array.forEach((el) => {
         counts[el] = (counts[el] || 0) + 1;
@@ -31,12 +31,12 @@ const getMode = (array) => {
 }
 
 // Range: The difference between the largest and smallest values.
-const getRange = (array) => {
+var getRange = (array) => {
     return Math.max(...array) - Math.min(...array);
 }
 
 // Variance: The average of the squared differences from the mean.
-const getVariance = (array) => {
+var getVariance = (array) => {
     const mean = getMean(array);
     const variance = array.reduce((acc, el) => {
         const difference = el - mean;
@@ -47,11 +47,11 @@ const getVariance = (array) => {
 }
 
 // Standard Deviation: The square root of the variance.
-const getStandardDeviation = (array) => {
+var getStandardDeviation = (array) => {
     return Math.sqrt(getVariance(array));
 }
 
-const calculate = () => {
+var calculate = () => {
     const value = document.querySelector("#numbers").value;
     const array = value.split(/,\s*/g);
     const numbers = array.map(el => Number(el)).filter(el => !isNaN(el));
@@ -70,3 +70,10 @@ const calculate = () => {
     document.querySelector("#variance").textContent = variance;
     document.querySelector("#standardDeviation").textContent = standardDeviation;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('statsForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        calculate();
+    });
+});
