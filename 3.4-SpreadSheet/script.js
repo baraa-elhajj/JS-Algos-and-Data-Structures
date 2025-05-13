@@ -5,9 +5,12 @@ const infixToFunction = {
     "/": (x, y) => x / y,
 }
 
+// replace(str, newStr): replaces the first str match.
+// replace(regex, newStr): replaces all str matches using regex.
+// replace(regex, (_macth, grp1, grp2, grp3) => { // function }): matches capturing groups then applies a function.
 const infixEval = (str, regex) => {
     str.replace(regex, (_match, arg1, operator, arg2) => {
-        infixToFunction[operator](parseFloat(arg1), parseFloat(arg2))
+        infixToFunction[operator](parseFloat(arg1), parseFloat(arg2));
     });
 }
 
@@ -77,6 +80,7 @@ const evalFormula = (x, cells) => {
     return functionExpanded === x ? functionExpanded : evalFormula(functionExpanded, cells);
 }
 
+// window.onload ensures all DOM, styles, and images are loaded (DOMContentLoaded works only for DOM).
 window.onload = () => {
     const container = document.getElementById("container");
     const createLabel = (name) => {

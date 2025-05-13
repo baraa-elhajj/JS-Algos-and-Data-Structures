@@ -71,6 +71,7 @@ var calculate = () => {
     document.querySelector("#standardDeviation").textContent = standardDeviation;
 }
 
+// DOMContentLoaded ensures all HTML content are loaded.
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('statsForm').addEventListener('submit', (e) => {
         e.preventDefault();
