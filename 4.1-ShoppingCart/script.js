@@ -86,6 +86,7 @@ const products = [
 ];
 
 products.forEach(
+    // (product) object destruction
     ({ name, id, price, category }) => {
         dessertCards.innerHTML += `
       <div class="dessert-card">
@@ -179,6 +180,7 @@ const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
 [...addToCartBtns].forEach(
     (btn) => {
         btn.addEventListener("click", (event) => {
+            // event.target.id: gets the item id from the fired event, i.e the clicked item id.
             cart.addItem(Number(event.target.id), products);
             totalNumberOfItems.textContent = cart.getCounts();
             cart.calculateTotal();
@@ -192,4 +194,6 @@ cartBtn.addEventListener("click", () => {
     cartContainer.style.display = isCartShowing ? "block" : "none";
 });
 
+// bind(cart): used to ensure that the keyword "this" inside the method clearCart() refers 
+// to the cart object instead of refering to the clearCartBtn instead.
 clearCartBtn.addEventListener("click", cart.clearCart.bind(cart));
