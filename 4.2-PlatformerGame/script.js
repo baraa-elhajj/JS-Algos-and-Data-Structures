@@ -2,13 +2,18 @@ const startBtn = document.getElementById("start-btn");
 const canvas = document.getElementById("canvas");
 const startScreen = document.querySelector(".start-screen");
 const checkpointScreen = document.querySelector(".checkpoint-screen");
+
+// Selects a <p> element that is a direct child of an element with the class .checkpoint-screen
 const checkpointMessage = document.querySelector(".checkpoint-screen > p");
+// Gets the 2D rendering context having all the drawing methods.
 const ctx = canvas.getContext("2d");
+// innerWidth & innerHeight refer to the viewport, i.e it takes 100% of the web browser page.
 canvas.width = innerWidth;
 canvas.height = innerHeight;
 const gravity = 0.5;
 let isCheckpointCollisionDetectionActive = true;
 
+// ceil() rounds up to the nearest int, while floor() rounds down to the nearest int. 
 const proportionalSize = (size) => {
     return innerHeight < 500 ? Math.ceil((size / 500) * innerHeight) : size;
 }
