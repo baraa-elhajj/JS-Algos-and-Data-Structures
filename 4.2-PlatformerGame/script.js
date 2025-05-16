@@ -71,6 +71,7 @@ class Platform {
         this.height = proportionalSize(40);
     }
     draw() {
+        // selects the color of the shape to be drawn.
         ctx.fillStyle = "#acd157";
         ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
     }
@@ -131,7 +132,10 @@ const checkpoints = checkpointPositions.map(
 );
 
 const animate = () => {
+    // Ask the browser to call the animate function before the next repaint 
     requestAnimationFrame(animate);
+
+    // Clear the entire screen before drawing somthing new.
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     platforms.forEach((platform) => {
