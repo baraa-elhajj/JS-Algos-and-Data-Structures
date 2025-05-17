@@ -19,6 +19,7 @@ let rolls = 0;
 const rollDice = () => {
     diceValuesArr = [];
 
+    // random(): returns an number between 0 & 1
     for (let i = 0; i < 5; i++) {
         const randomDice = Math.floor(Math.random() * 6) + 1;
         diceValuesArr.push(randomDice);
@@ -90,6 +91,7 @@ const detectFullHouse = (arr) => {
         counts[num] = counts[num] ? counts[num] + 1 : 1;
     }
 
+    // checks the values of the object 'counts'
     const hasThreeOfAKind = Object.values(counts).includes(3);
     const hasPair = Object.values(counts).includes(2);
 
