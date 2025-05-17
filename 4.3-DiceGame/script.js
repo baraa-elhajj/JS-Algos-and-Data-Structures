@@ -91,7 +91,7 @@ const detectFullHouse = (arr) => {
         counts[num] = counts[num] ? counts[num] + 1 : 1;
     }
 
-    // checks the values of the object 'counts'
+    // Object.values(): returns an array of the object values, then includes() checks if something exists.
     const hasThreeOfAKind = Object.values(counts).includes(3);
     const hasPair = Object.values(counts).includes(2);
 
