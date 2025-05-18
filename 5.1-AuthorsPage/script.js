@@ -5,10 +5,15 @@ let startingIndex = 0;
 let endingIndex = 8;
 let authorDataArr = [];
 
+// Used to make HTTP requests like GET, POST, PUT, etc.
 fetch('https://cdn.freecodecamp.org/curriculum/news-author-page/authors.json')
+    // converts the result into JSON    
     .then((res) => res.json())
+    // do something with the result
     .then((data) => {
+        // puts the result data (array of authors) into an array.
         authorDataArr = data;
+        // slice() is immutable, it returns a new array with the sliced part of the original array.
         displayAuthors(authorDataArr.slice(startingIndex, endingIndex));
     })
     .catch((err) => {
@@ -28,6 +33,7 @@ const fetchMoreAuthors = () => {
 };
 
 const displayAuthors = (authors) => {
+    // destructing authors object.
     authors.forEach(({ author, image, url, bio }, index) => {
         authorContainer.innerHTML += `
     <div id="${index}" class="user-card">
