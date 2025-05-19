@@ -19,6 +19,7 @@ const allCategories = {
 const forumCategory = (id) => {
     let selectedCategory = {};
 
+    // hasOwnProperty(): checks whether an object has a property as its own property (not inherited).
     if (allCategories.hasOwnProperty(id)) {
         const { className, category } = allCategories[id];
 
@@ -87,6 +88,7 @@ const avatars = (posters, users) => {
 
 const fetchData = async () => {
     try {
+        // waits untill the result is fetched then moves to the next step.
         const res = await fetch(forumLatest);
         const data = await res.json();
         showLatestPosts(data);
